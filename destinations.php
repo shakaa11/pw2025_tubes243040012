@@ -4,7 +4,7 @@ include 'includes/db.php';
 include 'includes/header.php';
 
 // Define the base path for images (relative to destinations.php)
-$image_base_path = 'assets/images/destinations/'; // Sesuaikan path ini jika beda dengan upload_dir
+$image_base_path = 'assets/images/destinations/';
 
 $stmt = $pdo->query("SELECT * FROM destinations ORDER BY name ASC");
 $allDestinations = $stmt->fetchAll(PDO::FETCH_ASSOC);

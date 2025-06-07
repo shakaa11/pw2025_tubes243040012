@@ -1,8 +1,8 @@
 <?php
-$host = 'localhost'; // Ganti jika database Anda di tempat lain
-$db = 'tourism_db'; // Nama database yang sudah dibuat
-$user = 'root'; // Username database Anda
-$pass = ''; // Password database Anda
+$host = 'localhost'; 
+$db = 'tourism_db'; 
+$user = 'root'; 
+$pass = ''; 
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8mb4", $user, $pass);

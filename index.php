@@ -4,7 +4,7 @@ include 'includes/db.php';
 include 'includes/header.php';
 
 // Define the base path for images (relative to index.php)
-$image_base_path = 'assets/images/destinations/'; // Sesuaikan path ini jika beda dengan upload_dir
+$image_base_path = 'assets/images/destinations/';
 
 // Ambil destinasi terbaru atau populer
 $stmt = $pdo->query("SELECT * FROM destinations ORDER BY created_at DESC LIMIT 3");

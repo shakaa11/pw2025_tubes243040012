@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'includes/db.php'; // Pastikan file ini berisi koneksi PDO Anda
+include 'includes/db.php'; 
 include 'includes/header.php';
 
 $contact_message = '';

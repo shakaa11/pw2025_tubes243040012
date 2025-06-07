@@ -11,13 +11,10 @@
                     <h5>Quick Links</h5>
                     <ul class="list-unstyled">
                         <?php
-                        // PENTING: Variabel $base_project_path harus sudah didefinisikan di header.php.
-                        // Kode ini adalah fallback yang aman, tapi pastikan sudah benar di header.php Anda.
+                       
                         if (!isset($base_project_path)) {
-                            // Jika Anda melihat pesan ini, kemungkinan besar $base_project_path belum didefinisikan.
-                            // Sesuaikan ini dengan jalur dasar proyek Anda.
-                            // Contoh: '/nama_folder_proyek/' atau '/' jika di root server web.
-                            $base_project_path = '/your_project/'; // <--- PASTIKAN INI SESUAI DENGAN header.php!
+                           
+                            $base_project_path = '/your_project/'; 
                         }
                         ?>
                         <li><a href="<?php echo $base_project_path; ?>index.php" class="text-white-50 text-decoration-none">Home</a></li>

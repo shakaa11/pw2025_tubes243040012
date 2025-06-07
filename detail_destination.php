@@ -3,7 +3,7 @@ session_start();
 include 'includes/db.php';
 include 'includes/header.php';
 
-$image_base_path = 'assets/images/destinations/'; // Sesuaikan path ini jika beda dengan upload_dir
+$image_base_path = 'assets/images/destinations/'; 
 $destination = null;
 if (isset($_GET['id'])) {
     $id = filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);

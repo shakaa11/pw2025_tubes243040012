@@ -13,7 +13,7 @@ $message_type = '';
 
 // Define the directory where images will be uploaded
 $upload_dir = '../assets/images/destinations/'; // Sesuaikan path ini sesuai struktur folder Anda
-// Pastikan folder ini ada dan memiliki izin tulis (write permissions)
+
 
 // Handle Add/Edit Destination
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = filter_input(INPUT_POST, 'name');
     $location = filter_input(INPUT_POST, 'location');
     $description = filter_input(INPUT_POST, 'description');
-    // $image_url = filter_input(INPUT_POST, 'image', FILTER_SANITIZE_URL); // Ini tidak lagi diperlukan jika menggunakan file upload
+   
     $price_estimate = filter_input(INPUT_POST, 'price_estimate', FILTER_VALIDATE_FLOAT);
     $best_time_to_visit = filter_input(INPUT_POST, 'best_time_to_visit');
 
@@ -56,10 +56,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt_old_image = $pdo->prepare("SELECT image FROM destinations WHERE id = ?");
             $stmt_old_image->execute([$destination_id]);
             $old_image = $stmt_old_image->fetchColumn();
-            $image_filename = $old_image; // Keep the old image if no new one is uploaded
+            $image_filename = $old_image; 
         }
-        // If it's a new destination and no image is uploaded, it's an error.
-        // We'll handle overall validation below.
+       
     }
 
 

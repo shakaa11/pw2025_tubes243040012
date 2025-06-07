@@ -9,7 +9,7 @@ include 'includes/header.php';
 
     <div class="row align-items-center mb-5">
         <div class="col-md-6">
-            <img src="img/about_us.png" class="img-fluid rounded futuristic-card" alt="About Us">
+            <img src="../tourism_website/assets/images/destinations/about_us.png" class="img-fluid rounded futuristic-card" alt="About Us">
         </div>
         <div class="col-md-6">
             <p class="lead mt-4 mt-md-0 text-white-50">
@@ -36,24 +36,24 @@ include 'includes/header.php';
     <div class="row row-cols-1 row-cols-md-3 g-4 text-center">
         <div class="col">
             <div class="futuristic-card p-4">
-                <img src="../tourism_website/assets/images/destinations/team1.jpg" class="img-fluid rounded-circle mb-3" alt="Team Member 1" style="width: 150px; height: 150px; object-fit: cover;">
-                <h5 class="text-primary">John Doe</h5>
+                <img src="../tourism_website/assets/images/destinations/tim1.jpg" class="img-fluid rounded-circle mb-3" alt="Team Member 1" style="width: 150px; height: 150px; object-fit: cover;">
+                <h5 class="text-primary">Shaka</h5>
                 <p class="text-white-50">CEO & Founder</p>
                 <p class="small text-white-50">Visionary leader driving innovation in travel.</p>
             </div>
         </div>
         <div class="col">
             <div class="futuristic-card p-4">
-                <img src="../tourism_website/assets/images/destinations/team2.png" class="img-fluid rounded-circle mb-3" alt="Team Member 2" style="width: 150px; height: 150px; object-fit: cover;">
-                <h5 class="text-primary">Jane Smith</h5>
+                <img src="../tourism_website/assets/images/destinations/tim2.jpg" class="img-fluid rounded-circle mb-3" alt="Team Member 2" style="width: 150px; height: 150px; object-fit: cover;">
+                <h5 class="text-primary">Erik AM</h5>
                 <p class="text-white-50">Head of Operations</p>
                 <p class="small text-white-50">Ensuring smooth and unforgettable journeys.</p>
             </div>
         </div>
         <div class="col">
             <div class="futuristic-card p-4">
-                <img src="../tourism_website/assets/images/destinations/team3.jpg" class="img-fluid rounded-circle mb-3" alt="Team Member 3" style="width: 150px; height: 150px; object-fit: cover;">
-                <h5 class="text-primary">Peter Jones</h5>
+                <img src="../tourism_website/assets/images/destinations/tim.png" class="img-fluid rounded-circle mb-3" alt="Team Member 3" style="width: 150px; height: 150px; object-fit: cover;">
+                <h5 class="text-primary">Ardhi JM</h5>
                 <p class="text-white-50">Chief Technology Officer</p>
                 <p class="small text-white-50">Architect of our seamless digital experiences.</p>
             </div>

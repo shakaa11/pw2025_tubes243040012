@@ -6,14 +6,9 @@
     <title>Futuristic Travel - Explore Beyond Limits</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <?php
-    // Tentukan base path proyek Anda.
-    // PENTING: GANTI '/your_project/' dengan jalur asli proyek Anda di server web.
-    // Contoh:
-    // - Jika proyek Anda langsung di root domain (misal: public_html), gunakan '/'.
-    //   $base_project_path = '/';
-    // - Jika proyek Anda ada di subfolder (misal: http://localhost/my_app/), gunakan '/my_app/'.
+  
     //   $base_project_path = '/my_app/';
-    $base_project_path = '/tourism_website/'; // <--- UBAH INI SESUAI DENGAN LOKASI PROYEK ANDA!
+    $base_project_path = '/tourism_website/'; 
     ?>
     <link rel="stylesheet" href="<?php echo $base_project_path; ?>css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
