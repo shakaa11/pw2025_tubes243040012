@@ -1,0 +1,159 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0d0d1a; /* Dark background */
+    color: #e0e0e0; /* Light grey text */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Futurism specific styles */
+.futuristic-logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(0, 191, 255, 0.5); /* Neon glow */
+}
+
+.futuristic-card {
+    background-color: #1a1a2e; /* Darker card background */
+    border: 1px solid #33334d; /* Subtle border */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 191, 255, 0.1); /* Soft neon shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.futuristic-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 191, 255, 0.3); /* Stronger neon shadow on hover */
+}
+
+.futuristic-button {
+    background: linear-gradient(45deg, #00bfff, #8a2be2); /* Blue to Purple gradient */
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.futuristic-button:hover {
+    background: linear-gradient(45deg, #8a2be2, #00bfff); /* Reverse gradient on hover */
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.7);
+    transform: scale(1.05);
+}
+
+.futuristic-hero {
+    height: 80vh; /* Adjust as needed */
+    background: url('../img/hero_bg.jpg') no-repeat center center/cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.futuristic-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    z-index: 1;
+}
+
+.futuristic-hero-content {
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 0 10px rgba(0, 191, 255, 0.7);
+}
+
+.futuristic-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.futuristic-hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+.futuristic-section-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #00bfff; /* Primary blue for titles */
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.futuristic-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #00bfff, #8a2be2);
+    border-radius: 5px;
+}
+
+.futuristic-footer {
+    background-color: #1a1a2e !important;
+    border-top: 1px solid #33334d;
+}
+
+/* Override Bootstrap Defaults for a darker theme */
+.bg-dark {
+    background-color: #1a1a2e !important;
+}
+
+.text-primary {
+    color: #00bfff !important; /* Brighter primary color */
+}
+
+.text-info {
+    color: #8a2be2 !important; /* Purple accent */
+}
+
+.form-control {
+    background-color: #2a2a4d;
+    color: #e0e0e0;
+    border: 1px solid #4a4a7d;
+}
+
+.form-control:focus {
+    background-color: #2a2a4d;
+    color: #e0e0e0;
+    border-color: #00bfff;
+    box-shadow: 0 0 0 0.25rem rgba(0, 191, 255, 0.25);
+}
+
+.btn-outline-primary {
+    color: #00bfff;
+    border-color: #00bfff;
+}
+
+.btn-outline-primary:hover {
+    background-color: #00bfff;
+    color: white;
+}
+
+.btn-primary {
+    background-color: #00bfff;
+    border-color: #00bfff;
+}
+
+.btn-primary:hover {
+    background-color: #0099cc;
+    border-color: #0099cc;
+}
