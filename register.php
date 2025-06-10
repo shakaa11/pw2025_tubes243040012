@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->execute([$username, $email, $hashed_password]);
             $success = 'Registration successful! You can now login.';
         } catch (PDOException $e) {
-            if ($e->getCode() == '23000') { // Duplicate entry error code
+            if ($e->getCode() == '23000') { 
                 $error = 'Username or email already exists.';
             } else {
                 $error = 'Error registering user: ' . $e->getMessage();

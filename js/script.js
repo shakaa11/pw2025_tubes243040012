@@ -1,4 +1,3 @@
-// Contoh JavaScript sederhana untuk parallax, bisa diperluas
 document.addEventListener('DOMContentLoaded', function() {
     const hero = document.querySelector('.futuristic-hero');
     if (hero) {

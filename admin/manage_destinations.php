@@ -2,7 +2,6 @@
 session_start();
 include '../includes/db.php';
 
-// Ensure only admins can access this page
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
     header("Location: ../login.php");
     exit;
@@ -11,13 +10,13 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
 $message = '';
 $message_type = '';
 
-// Define the directory where images will be uploaded
-$upload_dir = '../assets/images/destinations/'; // Sesuaikan path ini sesuai struktur folder Anda
+//  tempat gambar akan diunggah
+$upload_dir = '../assets/images/destinations/'; 
 
 
 // Handle Add/Edit Destination
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Sanitize and validate all incoming POST data
+    // Sanitasi dan validasi semua data POST yang masuk
     $destination_id = filter_input(INPUT_POST, 'destination_id', FILTER_SANITIZE_NUMBER_INT);
     $name = filter_input(INPUT_POST, 'name');
     $location = filter_input(INPUT_POST, 'location');
@@ -28,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $image_filename = ''; // Untuk menyimpan nama file gambar di database
 
-    // Handle file upload
+    // Menangani unggahan file
     if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
         $file_tmp_name = $_FILES['image']['tmp_name'];
         $file_name = basename($_FILES['image']['name']);
@@ -36,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $allowed_ext = ['jpg', 'jpeg', 'png', 'gif'];
 
         if (in_array($file_ext, $allowed_ext)) {
-            // Generate a unique filename to prevent overwrites
+            // Hasilkan nama file yang unik untuk mencegah penimpaan
             $new_file_name = uniqid('img_', true) . '.' . $file_ext;
             $upload_path = $upload_dir . $new_file_name;
 
@@ -51,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $message_type = 'danger';
         }
     } else {
-        // If no new file is uploaded, retain the existing image filename for updates
+        //Jika tidak ada file baru yang diunggah, pertahankan nama file gambar yang ada untuk pembaruan
         if (!empty($destination_id)) {
             $stmt_old_image = $pdo->prepare("SELECT image FROM destinations WHERE id = ?");
             $stmt_old_image->execute([$destination_id]);
@@ -62,13 +61,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
 
-    // Basic validation to ensure required fields are not empty
+    // Validasi dasar untuk memastikan bidang yang diperlukan tidak kosong
     if (empty($name) || empty($location) || empty($description) || empty($image_filename)) {
         $message = 'Please fill in all required fields (Name, Location, Description) and upload an image.';
         $message_type = 'danger';
     } else {
         if (!empty($destination_id)) {
-            // Update existing destination
+            // Perbarui tujuan yang ada
             $stmt = $pdo->prepare("UPDATE destinations SET name = ?, location = ?, description = ?, image = ?, price_estimate = ?, best_time_to_visit = ? WHERE id = ?");
             if ($stmt->execute([$name, $location, $description, $image_filename, $price_estimate, $best_time_to_visit, $destination_id])) {
                 $message = 'Destination updated successfully!';
@@ -78,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $message_type = 'danger';
             }
         } else {
-            // Add new destination
+            // Tambahkan tujuan baru
             $stmt = $pdo->prepare("INSERT INTO destinations (name, location, description, image, price_estimate, best_time_to_visit) VALUES (?, ?, ?, ?, ?, ?)");
             if ($stmt->execute([$name, $location, $description, $image_filename, $price_estimate, $best_time_to_visit])) {
                 $message = 'Destination added successfully!';

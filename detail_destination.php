@@ -11,7 +11,7 @@ if (isset($_GET['id'])) {
     $stmt->execute([$id]);
     $destination = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    // Fetch reviews for this destination
+    // Ambil ulasan untuk tujuan ini
     $stmtReviews = $pdo->prepare("SELECT r.*, u.username FROM reviews r JOIN users u ON r.user_id = u.id WHERE r.destination_id = ? ORDER BY r.created_at DESC");
     $stmtReviews->execute([$id]);
     $reviews = $stmtReviews->fetchAll(PDO::FETCH_ASSOC);
@@ -23,7 +23,7 @@ if (!$destination) {
     exit;
 }
 
-// Handle review submission
+// Menangani pengiriman ulasan
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_review'])) {
     if (!isset($_SESSION['user_id'])) {
         $_SESSION['message'] = 'Please login to submit a review.';
@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_review'])) {
             $stmtInsertReview->execute([$destinationId, $userId, $rating, $comment]);
             $_SESSION['message'] = 'Review submitted successfully!';
             $_SESSION['message_type'] = 'success';
-            header("Location: detail_destination.php?id=" . $destination['id']); // Redirect to avoid resubmission
+            header("Location: detail_destination.php?id=" . $destination['id']); 
             exit;
         } catch (PDOException $e) {
             $_SESSION['message'] = 'Error submitting review: ' . $e->getMessage();

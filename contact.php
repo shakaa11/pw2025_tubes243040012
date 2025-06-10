@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['send_message'])) {
     $subject = filter_var($_POST['subject'], FILTER_SANITIZE_FULL_SPECIAL_CHARS); // Sanitasi input
     $message_body = filter_var($_POST['message'], FILTER_SANITIZE_FULL_SPECIAL_CHARS); // Sanitasi input
 
-    // Validasi dasar (opsional, tapi sangat disarankan)
+    // Validasi dasar 
     if (empty($name) || empty($email) || empty($subject) || empty($message_body)) {
         $contact_message = 'Please fill in all required fields.';
         $contact_message_type = 'danger';
@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['send_message'])) {
             // Tangani error jika terjadi masalah saat menyimpan ke database
             $contact_message = 'There was an error sending your message. Please try again later. Error: ' . $e->getMessage();
             $contact_message_type = 'danger';
-            // Anda bisa log error $e->getMessage() untuk debugging lebih lanjut
+            
         }
     }
 }

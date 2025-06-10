@@ -8,7 +8,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
     exit;
 }
 
-include '../includes/header.php'; // Pakai header dari root
+include '../includes/header.php'; 
 ?>
 
 <main class="container my-5">

@@ -3,7 +3,6 @@ session_start();
 include 'includes/db.php';
 include 'includes/header.php';
 
-// Define the base path for images (relative to index.php)
 $image_base_path = 'assets/images/destinations/';
 
 // Ambil destinasi terbaru atau populer
