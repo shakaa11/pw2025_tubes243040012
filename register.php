@@ -21,6 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt = $pdo->prepare("INSERT INTO users (username, email, password, role) VALUES (?, ?, ?, 'user')");
             $stmt->execute([$username, $email, $hashed_password]);
             $success = 'Registration successful! You can now login.';
+            header ("refresh:2;url=login.php");
         } catch (PDOException $e) {
             if ($e->getCode() == '23000') { 
                 $error = 'Username or email already exists.';

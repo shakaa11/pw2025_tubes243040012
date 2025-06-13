@@ -10,7 +10,6 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
 $message = '';
 $message_type = '';
 
-//  tempat gambar akan diunggah
 $upload_dir = '../assets/images/destinations/'; 
 
 
@@ -25,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $price_estimate = filter_input(INPUT_POST, 'price_estimate', FILTER_VALIDATE_FLOAT);
     $best_time_to_visit = filter_input(INPUT_POST, 'best_time_to_visit');
 
-    $image_filename = ''; // Untuk menyimpan nama file gambar di database
+    $image_filename = ''; 
 
     // Menangani unggahan file
     if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
@@ -141,7 +140,7 @@ include '../includes/header.php';
             'name' => '',
             'location' => '',
             'description' => '',
-            'image' => '', // Pastikan ini 'image'
+            'image' => '', 
             'price_estimate' => '',
             'best_time_to_visit' => ''
         ];
